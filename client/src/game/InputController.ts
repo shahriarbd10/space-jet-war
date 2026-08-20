@@ -39,7 +39,7 @@ export class InputController {
 
   get movement() {
     if (this.pointer) return this.pointer.clone();
-    const x = Number(this.pressed.has("d") || this.pressed.has("arrowright")) - Number(this.pressed.has("a") || this.pressed.has("arrowleft"));
+    const x = Number(this.pressed.has("a") || this.pressed.has("arrowleft")) - Number(this.pressed.has("d") || this.pressed.has("arrowright"));
     const y = Number(this.pressed.has("w") || this.pressed.has("arrowup")) - Number(this.pressed.has("s") || this.pressed.has("arrowdown"));
     return new Vector2(x, y);
   }

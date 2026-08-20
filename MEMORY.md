@@ -39,3 +39,8 @@
 
 - The game camera’s visible horizontal direction is opposite the raw browser-space X coordinate in the active setup. The pointer conversion now inverts that axis before steering, so cursor movement to the right directs the interceptor right on screen.
 - The corrected mapping passes `pnpm check` and a production build; recent browser-console review contains no runtime errors.
+
+## 2026-08-20 — Keyboard Direction Correction
+
+- The game camera mirrors the world’s horizontal axis on screen. The keyboard vector now applies that same horizontal inversion: `A` and Left move the interceptor left; `D` and Right move it right. The existing vertical mapping already keeps `W`/Up moving up and `S`/Down moving down.
+- `pnpm check` and the production build both pass after the update, and recent browser-console review contains no runtime errors.

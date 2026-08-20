@@ -1,5 +1,7 @@
 # Pointer Steering Fix
 
+- [x] Inspect and correct WASD/arrow-key directions so W/up, S/down, A/left, and D/right match the visible flight field.
+- [x] Validate the corrected keyboard mapping with the camera-space direction formula, type-check, production build, and runtime-log review.
 - [x] Confirm and correct the reversed horizontal pointer axis so rightward cursor movement produces rightward flight.
 - [x] Re-validate the cursor mapping through the corrected browser-space formula, type-check, production build, and runtime-log review.
 - [x] Inspect how mouse coordinates are converted into gameplay movement.
