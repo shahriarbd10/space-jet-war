@@ -29,3 +29,8 @@
 - `pnpm check` passes after the final procedural interceptor and targeting-bracket refinement.
 - A final `pnpm build` passes. Vite reports an advisory chunk-size warning from the Babylon.js runtime bundle, but the production output is generated successfully.
 - Recent browser-console output contains no error, warning, or uncaught-exception entries for the active demo run.
+
+## 2026-08-20 — Pointer Steering Correction
+
+- The pointer target was previously ignored whenever firing was active, so holding the primary mouse button could freeze cursor-based steering. The player now smoothly interpolates toward the cursor target on every frame, including during firing.
+- `pnpm check` and the production build pass after the correction. The desktop mission view remains intact and recent browser-console output reports no runtime errors.

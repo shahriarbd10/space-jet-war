@@ -48,10 +48,9 @@ class Player {
       this.mesh.position.x = Math.sin(demoTime * 0.84) * 5.2;
       this.mesh.position.y = -3.15 + Math.cos(demoTime * 1.2) * 0.45;
     } else if (input.hasPointerTarget) {
-      if (!input.firing) {
-        this.mesh.position.x = move.x * 7.7;
-        this.mesh.position.y = move.y * 4.25;
-      }
+      const response = Math.min(1, delta * 13);
+      this.mesh.position.x += (move.x * 7.7 - this.mesh.position.x) * response;
+      this.mesh.position.y += (move.y * 4.25 - this.mesh.position.y) * response;
     } else if (Math.abs(move.x) > 0.02 || Math.abs(move.y) > 0.02) {
       this.mesh.position.x += move.x * 9 * delta;
       this.mesh.position.y += move.y * 7 * delta;
