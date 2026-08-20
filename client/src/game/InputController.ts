@@ -52,7 +52,7 @@ export class InputController {
 
   private updatePointer(event: PointerEvent) {
     const rect = this.canvas.getBoundingClientRect();
-    const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+    const x = 1 - ((event.clientX - rect.left) / rect.width) * 2;
     const y = 1 - ((event.clientY - rect.top) / rect.height) * 2;
     this.pointer = new Vector2(Math.max(-1, Math.min(1, x)), Math.max(-1, Math.min(1, y)));
   }

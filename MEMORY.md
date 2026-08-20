@@ -34,3 +34,8 @@
 
 - The pointer target was previously ignored whenever firing was active, so holding the primary mouse button could freeze cursor-based steering. The player now smoothly interpolates toward the cursor target on every frame, including during firing.
 - `pnpm check` and the production build pass after the correction. The desktop mission view remains intact and recent browser-console output reports no runtime errors.
+
+## 2026-08-20 — Horizontal Pointer Axis Correction
+
+- The game camera’s visible horizontal direction is opposite the raw browser-space X coordinate in the active setup. The pointer conversion now inverts that axis before steering, so cursor movement to the right directs the interceptor right on screen.
+- The corrected mapping passes `pnpm check` and a production build; recent browser-console review contains no runtime errors.
